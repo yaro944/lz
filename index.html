@@ -625,7 +625,9 @@
       box-shadow: 0 10px 22px rgba(105, 22, 5, .18);
     }
 
-    footer { padding: 27px 20px; color: var(--muted); text-align: center; font-size: .86rem; }
+    .site-footer { padding: 30px 20px; color: var(--muted); text-align: center; font-size: .86rem; line-height: 1.9; }
+    .site-footer strong { display: block; margin-bottom: 4px; color: var(--ncwu-blue-dark); font-size: .94rem; }
+    .site-footer span { display: block; }
     :focus-visible { outline: 3px solid #ffb19a; outline-offset: 3px; }
 
     @media (max-width: 780px) {
@@ -1368,9 +1370,10 @@
       </section>
     </main>
 
-    <footer>
-      <span id="footerText">华北水利水电大学赴乌拉尔联邦大学留学指南</span>
-      <span aria-hidden="true"> · </span><span id="currentYear"></span>
+    <footer class="site-footer" aria-label="免责声明">
+      <strong>免责声明</strong>
+      <span>本网页由李智制作与维护 · 仅供华水学弟学妹赴俄学习和生活参考</span>
+      <span>部分信息具有时效性，请以最新通知为准 · 未经许可请勿商用</span>
     </footer>
   </div>
 
@@ -1470,8 +1473,6 @@
 
     document.title = SITE_CONFIG.pageTitle;
     document.getElementById("brandText").textContent = SITE_CONFIG.shortTitle;
-    document.getElementById("footerText").textContent = SITE_CONFIG.pageTitle;
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
 
     function isUnlocked() {
       try { return localStorage.getItem(SITE_CONFIG.storageKey) === "yes"; }
